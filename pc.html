@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PC受信</title>
+</head>
+<body>
+<h2>PC側 受信待ち</h2>
+
+<script>
+const ws = new WebSocket("wss://ws.postman-echo.com/raw");
+
+ws.onopen = () => {
+  console.log("接続完了");
+};
+
+ws.onmessage = (e) => {
+  alert("iPadから受信: " + e.data);
+};
+</script>
+</body>
+</html>
