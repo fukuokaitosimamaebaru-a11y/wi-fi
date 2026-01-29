@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>iPad送信</title>
+</head>
+<body>
+
+<input id="msg" placeholder="送るメッセージ">
+<button onclick="send()">送信</button>
+
+<script>
+const ws = new WebSocket("wss://ws.postman-echo.com/raw");
+
+function send() {
+  const text = document.getElementById("msg").value;
+  ws.send(text);
+}
+</script>
+
+</body>
+</html>
